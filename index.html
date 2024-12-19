@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <base href="./">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شروط الاستخدام</title>
+</head>
+<body>
+    <h1>شروط الاستخدام</h1>
+    <p>يرجى قراءة شروط الاستخدام بعناية قبل تحميل البرنامج:</p>
+    <ul>
+        <li>يجب أن تكون مسؤولاً عن استخدام البرنامج.</li>
+        <li>توافق على شروط وأحكام الموقع.</li>
+        <li>لا يجوز توزيع البرنامج أو تغييره.</li>
+    </ul>
+    
+    <form id="agreement-form">
+        <label>
+            <input type="checkbox" id="agree"> أوافق على شروط الاستخدام
+        </label>
+        <br><br>
+        <button type="submit" id="download-btn" disabled>تحميل البرنامج</button>
+    </form>
+
+    <script>
+        // تمكين زر التحميل عندما يوافق المستخدم على الشروط
+        document.getElementById('agree').addEventListener('change', function() {
+            document.getElementById('download-btn').disabled = !this.checked;
+        });
+
+        // عند تقديم النموذج، تحميل الملف
+        document.getElementById('agreement-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'https://github.com/AhmedSaad1516/secreen-vedio/releases'; // رابط الملف
+        });
+    </script>
+</body>
+</html>
